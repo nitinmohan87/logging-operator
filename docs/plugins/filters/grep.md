@@ -2,20 +2,20 @@
 ## Overview
  #### Example grep filter configurations
  ```
- spec:
+spec:
   filters:
     - regexp:
+      - key: elso
+        pattern: /^5\d\d$/
+	  - key: masodik
+        pattern: /\.css$/
+    - and:
+      - regexp:
         - key: elso
           pattern: /^5\d\d$/
+        exclude:
         - key: masodik
           pattern: /\.css$/
-    - and:
-        - regexp:
-          - key: elso
-            pattern: /^5\d\d$/
-          exclude:
-          - key: masodik
-            pattern: /\.css$/
  ```
 
  #### Fluentd Config Result
