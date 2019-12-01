@@ -20,28 +20,28 @@
 
  #### Fluentd Config Result
  ```
-	<filter **>
-		@type grep
-		@id test_grep
-		<regexp>
-		  key elso
-		  pattern /^5\d\d$/
-		</regexp>
-		<regexp>
-		  key masodik
-		  pattern /\.css$/
-		</regexp>
-		<and>
-		  <regexp>
-			key elso
-			pattern /^5\d\d$/
-		  </regexp>
-		  <exclude>
-			key masodik
-			pattern /\.css$/
-		  </exclude>
-		</and>
-	  </filter>
+<filter **>
+  @type grep
+  @id test_grep
+  <regexp>
+    key elso
+    pattern /^5\d\d$/
+  </regexp>
+  <regexp>
+    key masodik
+    pattern /\.css$/
+  </regexp>
+  <and>
+    <regexp>
+      key elso
+      pattern /^5\d\d$/
+    </regexp>
+    <exclude>
+      key masodik
+      pattern /\.css$/
+    </exclude>
+  </and>
+</filter>
  ```
 
 ## Configuration
