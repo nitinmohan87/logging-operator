@@ -60,7 +60,7 @@ spec:
  ```
 spec:
   filters:
-    - regexp:
+    regexp:
       - key: elso
         pattern: /^5\d\d$/
  ```
@@ -89,7 +89,7 @@ spec:
  ```
 spec:
   filters:
-    - exclude:
+    exclude:
       - key: elso
         pattern: /^5\d\d$/
  ```
@@ -117,7 +117,8 @@ spec:
  #### Example Or filter configurations
  ```
 spec:
-    - or:
+  filters:
+    or:
       - regexp:
         - key: elso
           pattern: /^5\d\d$/
@@ -156,7 +157,7 @@ spec:
  ```
 spec:
   filters:
-    - and:
+    and:
       - regexp:
         - key: elso
           pattern: /^5\d\d$/
@@ -171,13 +172,13 @@ spec:
   @type grep
   @id test_grep
   <and>
-    <regexp>
-      key elso
-      pattern /^5\d\d$/
-    </regexp>
-    <exclude>
-      key masodik
-      pattern /\.css$/
+    - <regexp>
+      - key elso
+        pattern /^5\d\d$/
+      </regexp>
+      <exclude>
+      - key masodik
+        pattern /\.css$/
     </exclude>
   </and>
 </filter>
