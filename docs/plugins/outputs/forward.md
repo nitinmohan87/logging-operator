@@ -33,7 +33,7 @@
 | verify_connection_at_startup | bool | No |  false | Verify that a connection can be made with one of out_forward nodes at the time of startup. <br> |
 | buffer | *Buffer | No | - | [Buffer](./buffer.md)<br> |
 ### Fluentd Server
-#### server
+####  server
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|

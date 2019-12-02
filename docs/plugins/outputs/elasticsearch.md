@@ -20,7 +20,7 @@ More info at https://github.com/uken/fluent-plugin-elasticsearch
 
 ## Configuration
 ### Elasticsearch
-#### Send your logs to Elasticsearch
+####  Send your logs to Elasticsearch
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|

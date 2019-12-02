@@ -14,7 +14,7 @@
 
 ## Configuration
 ### KinesisStream
-#### Send your logs to a Kinesis Stream
+####  Send your logs to a Kinesis Stream
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
@@ -33,7 +33,7 @@
 | format | *Format | No | - | [Format](./format.md)<br> |
 | buffer | *Buffer | No | - | [Buffer](./buffer.md)<br> |
 ### Assume Role Credentials
-#### assume_role_credentials
+####  assume_role_credentials
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|

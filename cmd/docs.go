@@ -61,7 +61,7 @@ func (d *doc) checkNodes(n ast.Node) bool {
 			if ok {
 				d.append(fmt.Sprintf("### %s", getTypeName(generic, typeName.Name.Name)))
 				if getTypeDocs(generic, true) != "" {
-					d.append(fmt.Sprintf("#### %s", getTypeDocs(generic, true)))
+					d.append(fmt.Sprintf("#### %s", getTypeDocs(generic, false)))
 				}
 				d.append("| Variable Name | Type | Required | Default | Description |")
 				d.append("|---|---|---|---|---|")

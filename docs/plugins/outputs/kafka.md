@@ -21,7 +21,7 @@
 
 ## Configuration
 ### Kafka
-#### Send your logs to Kafka
+####  Send your logs to Kafka
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
