@@ -65,25 +65,6 @@ import (
 //  </and>
 //</filter>
 // ```
-// ```
-//spec:
-//  filters:
-//    - regexp:
-//      - key: elso
-//        pattern: /^5\d\d$/
-// ```
-//
-// #### Fluentd Config Result
-// ```
-//<filter **>
-//  @type grep
-//  @id test_grep
-//  <regexp>
-//    key elso
-//    pattern /^5\d\d$/
-//  </regexp>
-//</filter>
-// ```
 type _docGrep interface{}
 
 type GrepConfig struct {
@@ -101,6 +82,13 @@ type GrepConfig struct {
 // +docName:"Regexp Directive"
 // Specify filtering rule. This directive contains two parameters.
 // More info at https://docs.fluentd.org/filter/grep#less-than-regexp-greater-than-directive
+type RegexpSection struct {
+	// Specify field name in the record to parse.
+	Key string `json:"key"`
+	// Pattern expression to evaluate
+	Pattern string `json:"pattern"`
+}
+
 // #### Example Regexp filter configurations
 // ```
 //spec:
@@ -121,12 +109,8 @@ type GrepConfig struct {
 //  </regexp>
 //</filter>
 // ```
-type RegexpSection struct {
-	// Specify field name in the record to parse.
-	Key string `json:"key"`
-	// Pattern expression to evaluate
-	Pattern string `json:"pattern"`
-}
+//---
+type _docRegexp interface{}
 
 // +kubebuilder:object:generate=true
 // +docName:"Exclude Directive"
