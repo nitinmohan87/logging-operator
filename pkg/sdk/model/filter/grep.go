@@ -82,13 +82,6 @@ type GrepConfig struct {
 // +docName:"Regexp Directive"
 // Specify filtering rule. This directive contains two parameters.
 // More info at https://docs.fluentd.org/filter/grep#less-than-regexp-greater-than-directive
-type RegexpSection struct {
-	// Specify field name in the record to parse.
-	Key string `json:"key"`
-	// Pattern expression to evaluate
-	Pattern string `json:"pattern"`
-}
-
 // #### Example Regexp filter configurations
 // ```
 //spec:
@@ -109,8 +102,13 @@ type RegexpSection struct {
 //  </regexp>
 //</filter>
 // ```
-//---
 type _docRegexp interface{}
+type RegexpSection struct {
+	// Specify field name in the record to parse.
+	Key string `json:"key"`
+	// Pattern expression to evaluate
+	Pattern string `json:"pattern"`
+}
 
 // +kubebuilder:object:generate=true
 // +docName:"Exclude Directive"
