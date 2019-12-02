@@ -1,5 +1,6 @@
-# grep
+# The grep filter plugin "greps" events by the values of specified fields.
 ## Overview
+ More info at https://docs.fluentd.org/filter/grep
  #### Example grep filter configurations
  ```
 spec:
@@ -48,26 +49,38 @@ spec:
 ### GrepConfig
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Section)<br> |
-| exclude | []ExcludeSection | No | - | [Exclude Section](#Exclude-Section)<br> |
-| or | []OrSection | No | - | [Or Section](#Or-Section)<br> |
-| and | []AndSection | No | - | [And Section](#And-Section)<br> |
-### Regexp Section
+| regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Directive)<br> |
+| exclude | []ExcludeSection | No | - | [Exclude Section](#Exclude-Directive)<br> |
+| or | []OrSection | No | - | [Or Section](#Or-Directive)<br> |
+| and | []AndSection | No | - | [And Section](#And-Directive)<br> |
+### Regexp Directive
+#### Specify filtering rule. This directive contains two parameters.
+More info at https://docs.fluentd.org/filter/grep#less-than-regexp-greater-than-directive
+
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
 | key | string | Yes | - | Specify field name in the record to parse.<br> |
 | pattern | string | Yes | - | Pattern expression to evaluate<br> |
-### Exclude Section
+### Exclude Directive
+#### Specify filtering rule to reject events. This directive contains two parameters.
+More info at https://docs.fluentd.org/filter/grep#less-than-exclude-greater-than-directive
+
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
 | key | string | Yes | - | Specify field name in the record to parse.<br> |
 | pattern | string | Yes | - | Pattern expression to evaluate<br> |
-### Or directive
+### Or Directive
+#### Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
+More info at https://docs.fluentd.org/filter/grep#less-than-or-greater-than-directive
+
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
 | regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Section)<br> |
 | exclude | []ExcludeSection | No | - | [Exclude Section](#Exclude-Section)<br> |
-### And directive
+### And Directive
+#### Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
+More info at https://docs.fluentd.org/filter/grep#less-than-and-greater-than-directive
+
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
 | regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Section)<br> |

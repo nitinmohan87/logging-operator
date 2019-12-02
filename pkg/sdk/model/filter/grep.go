@@ -22,7 +22,6 @@ import (
 // +kubebuilder:object:generate=true
 // +docName:"The grep filter plugin "greps" events by the values of specified fields."
 // More info at https://docs.fluentd.org/filter/grep
-
 // #### Example grep filter configurations
 // ```
 //spec:
@@ -69,18 +68,20 @@ import (
 type _docGrep interface{}
 
 type GrepConfig struct {
-	// +docLink:"Regexp Section,#Regex-Section"
+	// +docLink:"Regexp Section,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
-	// +docLink:"Exclude Section,#Exclude-Section"
+	// +docLink:"Exclude Section,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
-	// +docLink:"Or Section,#Or-Section"
+	// +docLink:"Or Section,#Or-Directive"
 	Or []OrSection `json:"or,omitempty"`
-	// +docLink:"And Section,#And-Section"
+	// +docLink:"And Section,#And-Directive"
 	And []AndSection `json:"and,omitempty"`
 }
 
 // +kubebuilder:object:generate=true
-// +docName:"Regexp Section"
+// +docName:"Regexp Directive"
+// Specify filtering rule. This directive contains two parameters.
+// More info at https://docs.fluentd.org/filter/grep#less-than-regexp-greater-than-directive
 type RegexpSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
@@ -89,7 +90,9 @@ type RegexpSection struct {
 }
 
 // +kubebuilder:object:generate=true
-// +docName:"Exclude Section"
+// +docName:"Exclude Directive"
+// Specify filtering rule to reject events. This directive contains two parameters.
+// More info at https://docs.fluentd.org/filter/grep#less-than-exclude-greater-than-directive
 type ExcludeSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
@@ -98,7 +101,9 @@ type ExcludeSection struct {
 }
 
 // +kubebuilder:object:generate=true
-// +docName:"Or directive"
+// +docName:"Or Directive"
+// Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
+// More info at https://docs.fluentd.org/filter/grep#less-than-or-greater-than-directive
 type OrSection struct {
 	// +docLink:"Regexp Section,#Regex-Section"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
@@ -107,7 +112,9 @@ type OrSection struct {
 }
 
 // +kubebuilder:object:generate=true
-// +docName:"And directive"
+// +docName:"And Directive"
+// Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
+// More info at https://docs.fluentd.org/filter/grep#less-than-and-greater-than-directive
 type AndSection struct {
 	// +docLink:"Regexp Section,#Regex-Section"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
