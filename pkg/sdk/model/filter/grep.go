@@ -65,6 +65,25 @@ import (
 //  </and>
 //</filter>
 // ```
+// ```
+//spec:
+//  filters:
+//    - regexp:
+//      - key: elso
+//        pattern: /^5\d\d$/
+// ```
+//
+// #### Fluentd Config Result
+// ```
+//<filter **>
+//  @type grep
+//  @id test_grep
+//  <regexp>
+//    key elso
+//    pattern /^5\d\d$/
+//  </regexp>
+//</filter>
+// ```
 type _docGrep interface{}
 
 type GrepConfig struct {
