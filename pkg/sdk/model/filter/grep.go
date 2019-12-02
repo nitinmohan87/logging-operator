@@ -68,7 +68,7 @@ import (
 type _docGrep interface{}
 
 type GrepConfig struct {
-	// +docLink:"Regexp Directive,#Regex-Directive"
+	// +docLink:"Regexp Directive,#Regexp-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
 	// +docLink:"Exclude Directive,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
@@ -178,7 +178,7 @@ type ExcludeSection struct {
 // ```
 // ---
 type OrSection struct {
-	// +docLink:"Regexp Directive,#Regex-Directive"
+	// +docLink:"Regexp Directive,#Regexp-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
 	// +docLink:"Exclude Directive,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
@@ -220,7 +220,7 @@ type OrSection struct {
 // ```
 //---
 type AndSection struct {
-	// +docLink:"Regexp Directive,#Regex-Directive"
+	// +docLink:"Regexp Directive,#Regexp-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
 	// +docLink:"Exclude Directive,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`

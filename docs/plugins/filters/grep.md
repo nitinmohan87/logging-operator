@@ -49,7 +49,7 @@ spec:
 ### GrepConfig
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Directive](#Regex-Directive)<br> |
+| regexp | []RegexpSection | No | - | [Regexp Directive](#Regexp-Directive)<br> |
 | exclude | []ExcludeSection | No | - | [Exclude Directive](#Exclude-Directive)<br> |
 | or | []OrSection | No | - | [Or Directive](#Or-Directive)<br> |
 | and | []AndSection | No | - | [And Directive](#And-Directive)<br> |
@@ -148,7 +148,7 @@ spec:
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Directive](#Regex-Directive)<br> |
+| regexp | []RegexpSection | No | - | [Regexp Directive](#Regexp-Directive)<br> |
 | exclude | []ExcludeSection | No | - | [Exclude Directive](#Exclude-Directive)<br> |
 ### And Directive
 ####  Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
@@ -187,5 +187,5 @@ spec:
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Directive](#Regex-Directive)<br> |
+| regexp | []RegexpSection | No | - | [Regexp Directive](#Regexp-Directive)<br> |
 | exclude | []ExcludeSection | No | - | [Exclude Directive](#Exclude-Directive)<br> |
