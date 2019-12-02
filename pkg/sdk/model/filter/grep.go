@@ -68,13 +68,13 @@ import (
 type _docGrep interface{}
 
 type GrepConfig struct {
-	// +docLink:"Regexp Section,#Regex-Directive"
+	// +docLink:"Regexp Directive,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
-	// +docLink:"Exclude Section,#Exclude-Directive"
+	// +docLink:"Exclude Directive,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
-	// +docLink:"Or Section,#Or-Directive"
+	// +docLink:"Or Directive,#Or-Directive"
 	Or []OrSection `json:"or,omitempty"`
-	// +docLink:"And Section,#And-Directive"
+	// +docLink:"And Directive,#And-Directive"
 	And []AndSection `json:"and,omitempty"`
 }
 
@@ -177,9 +177,9 @@ type ExcludeSection struct {
 // ```
 // ---
 type OrSection struct {
-	// +docLink:"Regexp Section,#Regex-Directive"
+	// +docLink:"Regexp Directive,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
-	// +docLink:"Exclude Section,#Exclude-Directive"
+	// +docLink:"Exclude Directive,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
 }
 
@@ -219,9 +219,9 @@ type OrSection struct {
 // ```
 //---
 type AndSection struct {
-	// +docLink:"Regexp Section,#Regex-Directive"
+	// +docLink:"Regexp Directive,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
-	// +docLink:"Exclude Section,#Exclude-Directive"
+	// +docLink:"Exclude Directive,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
 }
 

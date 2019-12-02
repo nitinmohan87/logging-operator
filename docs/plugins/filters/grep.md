@@ -49,10 +49,10 @@ spec:
 ### GrepConfig
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Directive)<br> |
-| exclude | []ExcludeSection | No | - | [Exclude Section](#Exclude-Directive)<br> |
-| or | []OrSection | No | - | [Or Section](#Or-Directive)<br> |
-| and | []AndSection | No | - | [And Section](#And-Directive)<br> |
+| regexp | []RegexpSection | No | - | [Regexp Directive](#Regex-Directive)<br> |
+| exclude | []ExcludeSection | No | - | [Exclude Directive](#Exclude-Directive)<br> |
+| or | []OrSection | No | - | [Or Directive](#Or-Directive)<br> |
+| and | []AndSection | No | - | [And Directive](#And-Directive)<br> |
 ### Regexp Directive
 ####  Specify filtering rule. This directive contains two parameters.
  More info at https://docs.fluentd.org/filter/grep#less-than-regexp-greater-than-directive
@@ -147,8 +147,8 @@ spec:
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Directive)<br> |
-| exclude | []ExcludeSection | No | - | [Exclude Section](#Exclude-Directive)<br> |
+| regexp | []RegexpSection | No | - | [Regexp Directive](#Regex-Directive)<br> |
+| exclude | []ExcludeSection | No | - | [Exclude Directive](#Exclude-Directive)<br> |
 ### And Directive
 ####  Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
  More info at https://docs.fluentd.org/filter/grep#less-than-and-greater-than-directive
@@ -186,5 +186,5 @@ spec:
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
-| regexp | []RegexpSection | No | - | [Regexp Section](#Regex-Directive)<br> |
-| exclude | []ExcludeSection | No | - | [Exclude Section](#Exclude-Directive)<br> |
+| regexp | []RegexpSection | No | - | [Regexp Directive](#Regex-Directive)<br> |
+| exclude | []ExcludeSection | No | - | [Exclude Directive](#Exclude-Directive)<br> |
