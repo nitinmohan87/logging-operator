@@ -82,6 +82,26 @@ type GrepConfig struct {
 // +docName:"Regexp Directive"
 // Specify filtering rule. This directive contains two parameters.
 // More info at https://docs.fluentd.org/filter/grep#less-than-regexp-greater-than-directive
+// #### Example Regexp filter configurations
+// ```
+//spec:
+//  filters:
+//    - regexp:
+//      - key: elso
+//        pattern: /^5\d\d$/
+// ```
+//
+// #### Fluentd Config Result
+// ```
+//<filter **>
+//  @type grep
+//  @id test_grep
+//  <regexp>
+//    key elso
+//    pattern /^5\d\d$/
+//  </regexp>
+//</filter>
+// ```
 type RegexpSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
@@ -93,6 +113,26 @@ type RegexpSection struct {
 // +docName:"Exclude Directive"
 // Specify filtering rule to reject events. This directive contains two parameters.
 // More info at https://docs.fluentd.org/filter/grep#less-than-exclude-greater-than-directive
+// #### Example Exclude filter configurations
+// ```
+//spec:
+//  filters:
+//    - exclude:
+//      - key: elso
+//        pattern: /^5\d\d$/
+// ```
+//
+// #### Fluentd Config Result
+// ```
+//<filter **>
+//  @type grep
+//  @id test_grep
+//  <exclude>
+//    key elso
+//    pattern /^5\d\d$/
+//  </exclude>
+//</filter>
+// ```
 type ExcludeSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
@@ -104,10 +144,39 @@ type ExcludeSection struct {
 // +docName:"Or Directive"
 // Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
 // More info at https://docs.fluentd.org/filter/grep#less-than-or-greater-than-directive
+// #### Example Or filter configurations
+// ```
+//spec:
+//    - or:
+//      - regexp:
+//        - key: elso
+//          pattern: /^5\d\d$/
+//        exclude:
+//        - key: masodik
+//          pattern: /\.css$/
+// ```
+//
+// #### Fluentd Config Result
+// ```
+//<filter **>
+//  @type grep
+//  @id test_grep
+//  <or>
+//    <regexp>
+//      key elso
+//      pattern /^5\d\d$/
+//    </regexp>
+//    <exclude>
+//      key masodik
+//      pattern /\.css$/
+//    </exclude>
+//  </or>
+//</filter>
+// ```
 type OrSection struct {
-	// +docLink:"Regexp Section,#Regex-Section"
+	// +docLink:"Regexp Section,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
-	// +docLink:"Exclude Section,#Exclude-Section"
+	// +docLink:"Exclude Section,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
 }
 
@@ -115,10 +184,40 @@ type OrSection struct {
 // +docName:"And Directive"
 // Specify filtering rule. This directive contains either <regexp> or <exclude> directive.
 // More info at https://docs.fluentd.org/filter/grep#less-than-and-greater-than-directive
+// #### Example and filter configurations
+// ```
+//spec:
+//  filters:
+//    - and:
+//      - regexp:
+//        - key: elso
+//          pattern: /^5\d\d$/
+//        exclude:
+//        - key: masodik
+//          pattern: /\.css$/
+// ```
+//
+// #### Fluentd Config Result
+// ```
+//<filter **>
+//  @type grep
+//  @id test_grep
+//  <and>
+//    <regexp>
+//      key elso
+//      pattern /^5\d\d$/
+//    </regexp>
+//    <exclude>
+//      key masodik
+//      pattern /\.css$/
+//    </exclude>
+//  </and>
+//</filter>
+// ```
 type AndSection struct {
-	// +docLink:"Regexp Section,#Regex-Section"
+	// +docLink:"Regexp Section,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
-	// +docLink:"Exclude Section,#Exclude-Section"
+	// +docLink:"Exclude Section,#Exclude-Directive"
 	Exclude []ExcludeSection `json:"exclude,omitempty"`
 }
 
