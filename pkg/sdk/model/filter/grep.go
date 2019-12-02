@@ -101,8 +101,8 @@ type GrepConfig struct {
 //    pattern /^5\d\d$/
 //  </regexp>
 //</filter>
-//---
 // ```
+//---
 type RegexpSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
@@ -134,6 +134,7 @@ type RegexpSection struct {
 //  </exclude>
 //</filter>
 // ```
+// ---
 type ExcludeSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
@@ -174,6 +175,7 @@ type ExcludeSection struct {
 //  </or>
 //</filter>
 // ```
+// ---
 type OrSection struct {
 	// +docLink:"Regexp Section,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`
@@ -215,6 +217,7 @@ type OrSection struct {
 //  </and>
 //</filter>
 // ```
+//---
 type AndSection struct {
 	// +docLink:"Regexp Section,#Regex-Directive"
 	Regexp []RegexpSection `json:"regexp,omitempty"`

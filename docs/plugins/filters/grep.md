@@ -75,8 +75,8 @@ spec:
     pattern /^5\d\d$/
   </regexp>
 </filter>
----
  ```
+---
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
@@ -105,6 +105,7 @@ spec:
   </exclude>
 </filter>
  ```
+ ---
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
@@ -142,6 +143,7 @@ spec:
   </or>
 </filter>
  ```
+ ---
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
@@ -180,6 +182,7 @@ spec:
   </and>
 </filter>
  ```
+---
 
 | Variable Name | Type | Required | Default | Description |
 |---|---|---|---|---|
