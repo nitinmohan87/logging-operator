@@ -101,8 +101,8 @@ type GrepConfig struct {
 //    pattern /^5\d\d$/
 //  </regexp>
 //</filter>
+//---
 // ```
-type _docRegexp interface{}
 type RegexpSection struct {
 	// Specify field name in the record to parse.
 	Key string `json:"key"`
